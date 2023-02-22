@@ -12,8 +12,6 @@ const Filter = ({ categories, onFilterChange, selectedGenres, handleAll }) => {
     onFilterChange(category.id);
   };
 
-  const isAllSelected = selectedGenres.size === categories.length;
-
   return (
     <div className="filter-container">
       <button className="btn-filter" onClick={handleOpen}>
@@ -21,12 +19,6 @@ const Filter = ({ categories, onFilterChange, selectedGenres, handleAll }) => {
       </button>
       {isOpen ? (
         <div className="filter-category-container">
-          <button
-            className={`btn-category-${isAllSelected}`}
-            onClick={handleAll}>
-            All
-          </button>
-
           {categories.map((category, index) => {
             return (
               <button

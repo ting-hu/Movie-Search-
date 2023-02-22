@@ -59,25 +59,16 @@ const Home = () => {
   };
 
   const onFilterChange = (category) => {
-    console.log("filtechange", category);
     setSelectedGenres((prev) => {
       if (prev.has(category)) {
         prev.delete(category);
         return new Set(prev);
       } else {
+        const tempSet = selectedGenres.values();
+        prev.delete(tempSet.next().value);
         prev.add(category);
         return new Set(prev);
       }
-    });
-  };
-
-  const handleAll = () => {
-    const isAllSelected = selectedGenres.size === categories.length;
-    setSelectedGenres((prev) => {
-      if (!isAllSelected) {
-        const ids = categories.map((category) => category.id);
-        return new Set(ids);
-      } else return new Set([]);
     });
   };
 
@@ -117,7 +108,6 @@ const Home = () => {
         categories={categories}
         onFilterChange={onFilterChange}
         selectedGenres={selectedGenres}
-        handleAll={handleAll}
       />
       <Search
         movies={popularMovies}
