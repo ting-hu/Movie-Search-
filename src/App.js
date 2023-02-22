@@ -1,17 +1,17 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./page/Home";
 import MovieDetails from "./page/MovieDetails/MovieDetails";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/Movie-Search/">
+      <BrowserRouter basename="/Movie-Search-">
         <div className="app">
-          <Switch>
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path={`/movies/:id`} element={<MovieDetails />} />
-          </Switch>
+          </Routes>
         </div>
       </BrowserRouter>
     </div>
