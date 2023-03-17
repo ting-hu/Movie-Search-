@@ -14,7 +14,7 @@ const Pagination = ({
         className="pagination-page"
         onClick={handlePrev}
         disabled={page === 1}>
-        Prev
+        {`<`}
       </button>
       {pageButtons.map((pagebutton, index) => {
         if (!isNaN(pagebutton)) {
@@ -38,7 +38,7 @@ const Pagination = ({
         className="pagination-page"
         onClick={handleNext}
         disabled={page === 500}>
-        Next
+        {`>`}
       </button>
     </div>
   );

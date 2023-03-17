@@ -13,26 +13,28 @@ const Filter = ({ categories, onFilterChange, selectedGenres, handleAll }) => {
   };
 
   return (
-    <div className="filter-container">
+    <div className="wrapper">
       <button className="btn-filter" onClick={handleOpen}>
         <span>Filter</span>
       </button>
-      {isOpen ? (
-        <div className="filter-category-container">
-          {categories.map((category, index) => {
-            return (
-              <button
-                key={index}
-                className={`btn-category-${selectedGenres.has(category.id)}`}
-                onClick={(e) => handleClickCategory(category)}>
-                {category.name}
-              </button>
-            );
-          })}
-        </div>
-      ) : (
-        <div></div>
-      )}
+      <div className="filter-container">
+        {isOpen ? (
+          <div className="filter-category-container">
+            {categories.map((category, index) => {
+              return (
+                <button
+                  key={index}
+                  className={`btn-category-${selectedGenres.has(category.id)}`}
+                  onClick={(e) => handleClickCategory(category)}>
+                  {category.name}
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </div>
     </div>
   );
 };

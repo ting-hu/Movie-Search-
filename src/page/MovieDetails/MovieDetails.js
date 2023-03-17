@@ -25,10 +25,13 @@ const MovieDetails = () => {
       <div className="movie-details">
         <h1>{detail.original_title}</h1>
         <div className="movie-details-wrapper">
-          <img
-            className="detail-img-poster"
-            src={"https://image.tmdb.org/t/p/w500" + detail.poster_path}
-            alt={detail.title + " poster"}></img>
+          <div className="poster-wrapper">
+            <img
+              className="detail-img-poster"
+              src={"https://image.tmdb.org/t/p/w500" + detail.poster_path}
+              alt={detail.title + " poster"}></img>
+          </div>
+
           <div className="info-wrapper">
             <h4>
               Status: <span>{detail.status}</span>

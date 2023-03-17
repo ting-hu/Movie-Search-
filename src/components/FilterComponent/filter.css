@@ -8,6 +8,7 @@
 }
 
 .btn-filter{
+  width:25vh;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
   text-transform: uppercase;
@@ -15,7 +16,7 @@
   letter-spacing: .15rem;
   position: relative;
   background-color: #023e8a;
-  border-color: #023e8a;
+  border:3px solid #023e8a;
   color:#fff;
   transition: all .35s;
 }
